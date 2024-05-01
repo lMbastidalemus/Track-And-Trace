@@ -1,0 +1,44 @@
+﻿@model List<ML.Paquete>
+@{
+    ViewData["Title"] = "GetAllPaquete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="text-lg-center">Paquetes</h2>
+
+<br />
+
+<table class="table table-dark table-hover">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Instruccion Entrega</th>
+            <th>Peso</th>
+            <th>Direccion de Origen</th>
+            <th>Direccion de Entrega</th>
+            <th>Fecha Estima de Entrega</th>
+            <th>Numero Guia</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var result in Model)
+        {
+            <tr>
+
+                <td>@result.IdPaquete</td>
+                <td>@result.InstruccionEntrega</td>
+                <td>@result.Peso</td>
+                <td>@result.DireccionOrigen</td>
+                <td>@result.DireccionEntrega</td>
+                <td>@result.FechaEstimadaEntrega</td>
+                <td>@result.NumeroGuia</td>
+                 
+            </tr>
+        }
+    </tbody>
+</table>
+<br />
+<form asp-controller="PaqueteAdministrador" asp-action="EnviarTablaPorCorreo" method="post">
+    <button type="submit" class="btn btn-secondary">Enviar por Correo</button>
+</form>

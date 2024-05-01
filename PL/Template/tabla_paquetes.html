@@ -1,0 +1,42 @@
+﻿@model List<ML.Paquete>
+
+    <!DOCTYPE html>
+    <html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tabla de Paquetes</title>
+    </head>
+    <body>
+        <table border="1" cellspacing="0" cellpadding="10">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Nombre</th>
+                    <th>Instrucción Entrega</th>
+                    <th>Peso</th>
+                    <th>Dirección de Origen</th>
+                    <th>Dirección de Entrega</th>
+                    <th>Fecha Estimada de Entrega</th>
+                    <th>Número Guía</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var paquete in Model)
+                {
+                <tr>
+                    <td>@paquete.IdPaquete</td>
+                    <td>@paquete.Nombre</td>
+                    <td>@paquete.InstruccionEntrega</td>
+                    <td>@paquete.Peso</td>
+                    <td>@paquete.DireccionOrigen</td>
+                    <td>@paquete.DireccionEntrega</td>
+                    <td>@paquete.FechaEstimadaEntrega</td>
+                    <td>@paquete.NumeroGuia</td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </body>
+</html>
